@@ -1,12 +1,11 @@
 import React from "react";
-import { Provider } from "react-redux";
-import { Switch, Route } from 'react-router-dom';
+import {Provider} from "react-redux";
+import {Route, Switch} from 'react-router-dom';
 
 import PageListComponent from "./components/pagelist/PageListComponent";
 import LoginComponent from "./components/login_form/LoginComponent";
 import PageHomeComponent from "./components/pages/home/PageHomeComponent";
 import PageInfoComponent from "./components/pages/info/PageInfoComponent";
-import DebugComponent from "./components/debug/DebugComponent";
 
 import store from "./store/Store";
 import './App.scss';
@@ -28,7 +27,6 @@ const HEADER = () => (
 export default () => (
     <Provider store={store}>
         <HEADER/>
-        {/*<DebugComponent/>*/}
         <div className="page-container">
             <PAGE_SWITCHER/>
         </div>

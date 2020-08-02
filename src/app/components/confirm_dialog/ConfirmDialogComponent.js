@@ -49,9 +49,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(ConfirmDialogComponent));
+export default connect(mapStateToProps)(withRouter(ConfirmDialogComponent));

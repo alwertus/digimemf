@@ -1,1 +1,0 @@
-export function setStoreParam(type, newValue) { return { type: type, newValue: newValue } }

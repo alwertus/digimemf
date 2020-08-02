@@ -1,6 +1,6 @@
-import React, { Component} from "react";
-import { connect } from "react-redux";
-import { withRouter } from "react-router";
+import React, {Component} from "react";
+import {connect} from "react-redux";
+import {withRouter} from "react-router";
 import "./TreeControlsComponent.scss";
 import IconButton from '@material-ui/core/IconButton';
 
@@ -8,17 +8,12 @@ import SelectNoneIcon from '@material-ui/icons/CheckBoxOutlineBlankRounded';
 import AddIcon from '@material-ui/icons/ControlPointRounded';
 import DeleteIcon from '@material-ui/icons/DeleteRounded';
 import EditIcon from '@material-ui/icons/EditRounded';
-// import TextEditIcon from '@material-ui/icons/AssignmentRounded';
 import TextField from '@material-ui/core/TextField';
 import OkIcon from '@material-ui/icons/CheckCircleOutlineOutlined';
 import CancelIcon from '@material-ui/icons/BlockOutlined';
-import { setSelectedItem } from "../TreeActions";
-import {
-    setShowAddPopup,
-    setNewItemTitle,
-    newTreeItem,
-    deleteTreeItem } from "./TreeControlsActions";
-import { setDialogIsOpen } from "../../../../confirm_dialog/ConfirmDialogActions";
+import {setSelectedItem} from "../TreeActions";
+import {deleteTreeItem, newTreeItem, setNewItemTitle, setShowAddPopup} from "./TreeControlsActions";
+import {setDialogIsOpen} from "../../../../confirm_dialog/ConfirmDialogActions";
 import ConfirmDialogComponent from "../../../../confirm_dialog/ConfirmDialogComponent";
 
 class TreeControlsComponent extends Component {
@@ -89,7 +84,6 @@ class TreeControlsComponent extends Component {
                 }
                 <div><IconButton size="small"><EditIcon/></IconButton></div>
                 <div><IconButton size="small" onClick={ this.onDeleteItemClick }><DeleteIcon/></IconButton></div>
-                {/*<div><IconButton size="small"><TextEditIcon/></IconButton></div>*/}
             </div>
             <div className="panel-secondary">
                 {   !this.props.isShowAddPopup

@@ -32,9 +32,4 @@ const mapStateToProps = (state) => {
     };
 };
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PageInfoComponent));
+export default connect(mapStateToProps)(withRouter(PageInfoComponent));

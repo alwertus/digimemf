@@ -28,11 +28,11 @@ class PageComponent extends Component {
         case PGINFO.STATUS.SUCCESS:
             return this.PageMode();
         case PGINFO.STATUS.LOADING:
-            return <div> LOADING </div>
+            return <div>Загрузка...</div>
         case PGINFO.STATUS.ERROR:
-            return <div> ERROR </div>
+            return <div>Страница отсустствует</div>
         default:
-            return <div>ERROR STATUS ({this.props.pgInfoStatus})</div>
+            return <div>Непонятная ошибка (STATUS={this.props.pgInfoStatus})</div>
         }
     }
 
@@ -50,9 +50,7 @@ class PageComponent extends Component {
     render() {
         return <div className="infopage">
             <PageInfoControlsComponent/>
-            {/*<div className="content">*/}
                 { this.UpdatedPage() }
-            {/*</div>*/}
         </div>
     }
 }

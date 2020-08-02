@@ -1,8 +1,6 @@
 import { PGINFO } from "../../../../store/AppActions";
 
-const defaultHTMLstring = '<h1 style="color:blue;">something</h1>';
-
-export function pgInfoHtml(state = defaultHTMLstring, action) {
+export function pgInfoHtml(state = "", action) {
     switch (action.type) {
         case PGINFO.DATA:
             return action.newValue;

@@ -10,46 +10,8 @@ export function setSelectedItem(newValue) {
     store.dispatch(setPgInfoStatus(PGINFO.STATUS.NONAME));
     return { type: TREE.SET_SELECTED_ITEM, selectedItem: newValue } }
 
-const debugData =
-[{
-    id: '1',
-    title: 'Parent',
-    children: [
-        {
-            id: '2',
-            title: 'Child - 1',
-        },
-        {
-            id: '3',
-            title: 'Child - 3',
-            children: [
-                {
-                    id: '4',
-                    title: 'Child - 4',
-                },
-            ],
-        },
-    ],
-},
-    {
-        id: '11',
-        title: 'Parent2',
-        children: [
-            {
-                id: '12',
-                title: 'Child12'
-            }
-        ]
-    }];
-
 export function updateTreeData() {
     let dispatch = store.dispatch;
-    // console.log("UPDATE TREE (debug=" + store.getState().isDebug + ")");
-    if (store.getState().isDebug === 'true') {
-        dispatch(setTreeData(debugData));
-        dispatch(setTreeDataStatus(TREE.STATUS.SUCCESS));
-        return;
-    }
 
     // if user not login in
     if (store.getState().loginStatus !== LOGIN.STATUS.SUCCESS) {
@@ -94,7 +56,5 @@ export function updateTreeData() {
             console.log("ERROR: " + e);
             dispatch(setTreeDataStatus(TREE.STATUS.ERROR));
             dispatch(setErrorText("Проблемы соединения"));
-            // dispatch(setLoginStatus(LOGIN.STATUS.NONAME));
-
         });
 }

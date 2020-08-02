@@ -1,6 +1,5 @@
 import {PGINFO} from "../../../../store/AppActions";
 import store, {getAuthHeader} from "../../../../store/Store";
-import {pgInfoHtml, pgInfoHtmlTemp} from "./PageReducer";
 
 export function setPgInfoData(newValue) { return { type: PGINFO.DATA, newValue: newValue } }
 export function setPgInfoDataTemp(newValue) { return { type: PGINFO.DATA_TEMP, newValue: newValue } }
@@ -40,7 +39,6 @@ export function updatePageData() {
 
             switch (response.Result) {
                 case "OK":
-                    //var result = JSON.parse(response.html);
                     console.log("result=OK");
                     dispatch(setPgInfoData(response.html));
                     dispatch(setPgInfoStatus(PGINFO.STATUS.SUCCESS));
