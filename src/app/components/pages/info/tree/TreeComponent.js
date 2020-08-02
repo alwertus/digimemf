@@ -14,7 +14,7 @@ class TreeComponent extends Component {
     constructor(props, context) {
         super(props, context);
         this.onSelect = this.onSelect.bind(this);
-        this.onToggle = this.onToggle.bind(this);
+        // this.onToggle = this.onToggle.bind(this);
         this.renderTreeChild = this.renderTreeChild.bind(this);
         // this.expandedItems = localStorage.getItem("treeExpandedItem") == null ? ['root'] : localStorage.getItem("treeExpandedItem").split("%");
     }
@@ -22,12 +22,12 @@ class TreeComponent extends Component {
     onSelect = (e, id) => {
         this.props.setSelectedItem(id);
     }
-
+/*
     onToggle = (e, IDs) => {
         // console.log("SAVE:",IDs.join("%"));
         // localStorage.removeItem("treeExpandedItem");
         // localStorage.setItem("treeExpandedItem", IDs.join("%"));
-    }
+    }*/
 
     renderTreeChild = (nodes) => (
         <TreeItem key={nodes.id} nodeId={nodes.id} label={nodes.title}>
@@ -52,7 +52,7 @@ class TreeComponent extends Component {
                     // defaultExpanded={this.expandedItems}
                     defaultExpandIcon = { <ChevronRightIcon/> }
                     onNodeSelect = { this.onSelect }
-                    onNodeToggle = { this.onToggle }
+                    // onNodeToggle = { this.onToggle }
                     selected = { this.props.selectedItem } // multiSelect
                     >
                         {this.props.treeData.map((item) => (this.renderTreeChild(item)))}

@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import {withRouter} from "react-router";
 
 class PageHomeComponent extends Component {
@@ -11,7 +11,7 @@ class PageHomeComponent extends Component {
         );
     }
 }
-
+/*
 const mapStateToProps = (state) => {
     return {
     };
@@ -20,6 +20,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
     };
-};
+};*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PageHomeComponent));
+export default /*connect(mapStateToProps, mapDispatchToProps)*/(withRouter(PageHomeComponent));

@@ -1,4 +1,4 @@
-export function testTest(state = false, action) {
+/*export function testTest(state = false, action) {
     switch (action.type) {
         case 'TEST_TEST':
             return action;
@@ -6,4 +6,4 @@ export function testTest(state = false, action) {
         default:
             return state;
     }
-}
+}*/

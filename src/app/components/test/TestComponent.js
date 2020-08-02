@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+/*import React, { Component} from "react";
 import { connect } from "react-redux";
 import {withRouter} from "react-router";
 import "./TestComponent.scss";
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TestComponent));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(TestComponent));*/

@@ -1,3 +1,4 @@
+/*
 
 export function isDebug(state = localStorage.getItem("isDebug") == null ? false : localStorage.getItem("isDebug"), action) {
     switch (action.type) {
@@ -7,4 +8,4 @@ export function isDebug(state = localStorage.getItem("isDebug") == null ? false 
         default:
             return state;
     }
-}
+}*/

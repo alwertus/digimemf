@@ -1,12 +1,12 @@
 import { LOGIN } from "../../store/AppActions";
 
-export function setUserRoles(state = [], action) {
+/*export function setUserRoles(state = [], action) {
     if (action.type === LOGIN.SET_USERROLES) {
         console.log(action.roles);
         return action.roles;
     } else
         return action;
-}
+}*/
 
 export function userLogin(state = localStorage.getItem("userLogin") == null ? "" : localStorage.getItem("userLogin"), action) {
     if (action.type === LOGIN.USER_SET_LOGIN) {

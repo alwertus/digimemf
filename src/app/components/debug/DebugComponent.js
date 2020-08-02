@@ -1,3 +1,4 @@
+/*
 import React, { Component} from "react";
 import { connect } from "react-redux";
 import {withRouter} from "react-router";
@@ -40,4 +41,4 @@ const mapDispatchToProps = (dispatch) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(DebugComponent));
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(DebugComponent));*/

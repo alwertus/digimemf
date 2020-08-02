@@ -1,5 +1,5 @@
 import React, { Component} from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import { withRouter } from 'react-router-dom';
 import "./PageListComponent.scss";
 
@@ -23,7 +23,7 @@ class PageListComponent extends Component {
             </div>
     }
 }
-
+/*
 const mapStateToProps = (state) => {
     return {
     };
@@ -32,6 +32,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
     };
-};
+};*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(PageListComponent));
+export default /*connect(mapStateToProps, mapDispatchToProps)*/(withRouter(PageListComponent));

@@ -32,10 +32,9 @@ export function updateTreeData() {
         .then((response) => response.json())
         .then((response) => {
             console.log("response", response);
-
             switch (response.Result) {
                 case "OK":
-                    var result = JSON.parse(response.List);
+                    let result = JSON.parse(response.List);
                     dispatch(setTreeData(result));
                     dispatch(setTreeDataStatus(TREE.STATUS.SUCCESS));
                     break;
