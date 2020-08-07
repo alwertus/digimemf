@@ -30,7 +30,6 @@ class LoginComponent extends Component {
         }
     }
 
-    // ------------- RENDER -------------
     render() {
         return <div className="login-wrapper">
             <div id="Login-Text_UserName">{ this.props.userName }</div>

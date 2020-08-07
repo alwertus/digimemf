@@ -1,4 +1,4 @@
-import {LOGIN} from "../../store/AppActions";
+import {LOGIN, TREE} from "../../store/AppActions";
 
 export function setUserName (newValue) { return { type: LOGIN.SET_USERNAME, userName: newValue } }
 export function setUserRoles (newValue) { return { type: LOGIN.SET_USERROLES, roles: newValue } }
@@ -6,12 +6,14 @@ export function setLoginStatus (newValue) { return { type: LOGIN.SET_STATUS, log
 export function setErrorText (newValue) { return { type: LOGIN.SET_ERROR_TEXT, errorText: newValue } }
 export function setUserLogin (newValue) { return { type: LOGIN.USER_SET_LOGIN, userLogin: newValue } }
 export function setUserPassword (newValue) { return { type: LOGIN.USER_SET_PASSWORD, userPassword: newValue } }
+export function setTreeDataStatus (newValue) { return { type: TREE.SET_STATUS, treeDataStatus: newValue } }
 
 export function logout(dispatch) {
     dispatch(setUserName(""));
     dispatch(setUserLogin(""));
     dispatch(setUserPassword(""));
     dispatch(setLoginStatus(LOGIN.STATUS.NONAME));
+    dispatch(setTreeDataStatus(TREE.STATUS.NONAME));
 }
 
 export function signIn(dispatch, userLogin, userPassw) {

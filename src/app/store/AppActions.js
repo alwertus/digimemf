@@ -26,10 +26,15 @@ export let TREE = {
         SUCCESS: "TREE__STATUS__SUCCESS",
         ERROR: "TREE__STATUS__ERROR"
     },
-    CONTROLS: {
-        ADD_SHOW_POPUP: "TREE__CONTROLS__ADD_SHOW_POPUP"
+    SET_MODE: "TREE__SET_MODE",
+    MODE: {
+        NORMAL: "TREE__MODE__NORMAL",
+        ADD: "TREE__MODE__ADD",
+        EDIT: "TREE__MODE__EDIT",
+        MOVE: "TREE__MODE__MOVE",
     },
-    NEW_ITEM_TITLE: "TREE__NEW_ITEM_TITLE"
+    NEW_ITEM_TITLE: "TREE__NEW_ITEM_TITLE",
+    EDIT_RECORD_ID: "TREE__EDIT_RECORD_ID"
 };
 export let DIALOG = {
     IS_OPEN: "DIALOG__IS_OPEN"

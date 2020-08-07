@@ -1,10 +1,19 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
-import { userLogin, loginStatus, userPassword, loginErrorText, userName/*, setUserRoles */} from "../components/login_form/LoginReducer";
-import { dataStatus as treeDataStatus, treeData, errorText as treeErrorText, selectedItem as treeSelectedItem} from "../components/pages/info/tree/TreeReducer";
-import { showAddPopup as treeShowAddPopup, newItemTitle as treeNewItemTitle } from "../components/pages/info/tree/controls/TreeControlsReducer";
-import { confirmDialogIsOpen } from "../components/confirm_dialog/ConfirmDialogReducer";
-import { pgInfoHtml, pgInfoHtmlTemp, pgInfoMode, pgInfoStatus} from "../components/pages/info/page/PageReducer";
+import {loginErrorText, loginStatus, userLogin, userName, userPassword} from "../components/login_form/LoginReducer";
+import {
+    dataStatus as treeDataStatus,
+    errorText as treeErrorText,
+    selectedItem as treeSelectedItem,
+    treeData
+} from "../components/pages/info/tree/TreeReducer";
+import {
+    newItemTitle as treeNewItemTitle,
+    treeControlsMode,
+    treeEditRecordId
+} from "../components/pages/info/tree/controls/TreeControlsReducer";
+import {confirmDialogIsOpen} from "../components/confirm_dialog/ConfirmDialogReducer";
+import {pgInfoHtml, pgInfoHtmlTemp, pgInfoMode, pgInfoStatus} from "../components/pages/info/page/PageReducer";
 
 export default combineReducers({
     userLogin,
@@ -18,9 +27,9 @@ export default combineReducers({
     treeData,
     treeErrorText,
     treeSelectedItem,
-    treeShowAddPopup,
+    treeControlsMode,
     treeNewItemTitle,
-
+    treeEditRecordId,
     confirmDialogIsOpen,
 
     // Page Info

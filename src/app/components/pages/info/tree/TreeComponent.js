@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { connect } from "react-redux";
+import {connect} from "react-redux";
 import {withRouter} from "react-router";
 import TreeView from '@material-ui/lab/TreeView';
 import TreeItem from '@material-ui/lab/TreeItem';
@@ -7,7 +7,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import "./TreeComponent.scss";
 import {TREE} from "../../../../store/AppActions";
-import { updateTreeData, setSelectedItem } from "./TreeActions";
+import {setSelectedItem, updateTreeData} from "./TreeActions";
 
 class TreeComponent extends Component {
 
@@ -20,6 +20,7 @@ class TreeComponent extends Component {
     }
 
     onSelect = (e, id) => {
+        if (this.props.treeControlsMode === TREE.MODE.NORMAL || this.props.treeControlsMode === TREE.MODE.MOVE)
         this.props.setSelectedItem(id);
     }
 /*
@@ -72,6 +73,7 @@ const mapStateToProps = (state) => {
         treeError: state.treeErrorText,
         loginStatus: state.loginStatus,
         selectedItem: state.treeSelectedItem,
+        treeControlsMode: state.treeControlsMode,
     };
 };
 

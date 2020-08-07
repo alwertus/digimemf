@@ -10,3 +10,16 @@ export function getAuthHeader() {
     headers.append("Authorization", 'Basic ' + Buffer.from(store.getState().userLogin + ":" + store.getState().userPassword).toString('base64'));
     return headers;
 }
+
+export function getInfoTreeElementById(findId, node = store.getState().treeData) {
+    console.log("NODE", node);
+    if (!node) return null;
+
+    /*node.map((e)=> {
+            if (e.id === findId)
+                return e;
+            if (e.children !== undefined)
+                return getInfoTreeElementById(findId, e);
+        }
+    )*/
+}
