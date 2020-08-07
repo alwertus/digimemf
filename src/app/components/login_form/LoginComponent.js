@@ -2,6 +2,7 @@ import React, { Component} from "react";
 import { connect } from "react-redux";
 import { LOGIN } from "../../store/AppActions";
 import {setErrorText, signIn, setUserLogin, setUserPassword, logout} from "./LoginActions";
+import Button from '@material-ui/core/Button';
 import "./LoginComponent.scss";
 
 class LoginComponent extends Component {
@@ -21,11 +22,13 @@ class LoginComponent extends Component {
                 return <div id="Available_Controls">
                     <input className="login-input" name="inputLogin" type="text" placeholder="Имя" onChange={this.onChange} onKeyDown={this.onKeyDown}/>
                     <input className="login-input" name="inputPassword" type="text" placeholder="Пароль" onChange={this.onChange} autoComplete="on" onKeyDown={this.onKeyDown}/>
-                    <button className="login-button" onClick={this.onClickLogin}>Войти</button>
+                    <Button variant="outlined" color="primary" size="small" onClick={this.onClickLogin}>Войти</Button>
+                    {/*<button className="login-button" onClick={this.onClickLogin}>Войти</button>*/}
                 </div>
             default:
                 return <div  id="Available_Controls">
-                    <button className="login-button" onClick={this.onClickLogout}>Выйти</button>
+                    {/*<button className="login-button" onClick={this.onClickLogout}>Выйти</button>*/}
+                    <Button variant="outlined" color="primary" size="small" onClick={this.onClickLogout}>Выйти</Button>
                 </div>
         }
     }

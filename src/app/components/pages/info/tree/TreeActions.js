@@ -8,14 +8,14 @@ export function setErrorText(newValue) { return { type: TREE.ERROR_TEXT, errorTe
 export function setSelectedItem(newValue) {
     store.dispatch(setPgInfoStatus(PGINFO.STATUS.NONAME));
     return { type: TREE.SET_SELECTED_ITEM, selectedItem: newValue } }
-const debugData = [
+/*const debugData = [
     { id: '1', title: 'Parent 1', children: [
         { id: '11', title: '1 Child - 1', },
         { id: '12', title: '1 Child - 2', children: [
             { id: '121', title: '12 Child - 1', }, ], }, ], },
     { id: '2', title: 'Parent 2', children: [
         { id: '21', title: '2 Child - 1' } ] },
-    { id: '3', title: 'Parent 3' } ];
+    { id: '3', title: 'Parent 3' } ];*/
 
 export function updateTreeData() {
     let dispatch = store.dispatch;
