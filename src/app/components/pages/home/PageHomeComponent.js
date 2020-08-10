@@ -57,7 +57,8 @@ class PageHomeComponent extends Component {
         // console.log("find result = ", getElementById(debugData, '4s'));
         return (
             <div className="content-container">
-                <span>Home Page</span>
+                <p>Логин: user</p>
+                <p>Пароль: user123</p>
             </div>
         );
     }
