@@ -6,6 +6,10 @@ import "./CustomInfoStyle.scss";
 import PageInfoControlsComponent from "./controls/PageInfoControlsComponent";
 import {LOGIN, PGINFO} from "../../../../store/AppActions";
 import {setPgInfoDataTemp, updatePageData} from "./PageActions";
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-html";
+import "ace-builds/src-noconflict/theme-kuroir";
+
 
 class PageComponent extends Component {
 
@@ -15,13 +19,12 @@ class PageComponent extends Component {
     }
 
     onPageChange(e) {
-        this.props.setPgInfoDataTemp(e.target.value);
+        this.props.setPgInfoDataTemp(e);
     }
 
     UpdatedPage() {
         if (this.props.pgInfoStatus === PGINFO.STATUS.NONAME
             && this.props.loginStatus === LOGIN.STATUS.SUCCESS) {
-            console.log("start update Page");
             this.props.updatePageData();
         }
         switch (this.props.pgInfoStatus) {
@@ -41,7 +44,16 @@ class PageComponent extends Component {
             case PGINFO.MODE.PAGE:
                 return <div className="content" dangerouslySetInnerHTML={{__html: this.props.pgInfoHtml}} />
             case PGINFO.MODE.TEXT:
-                return <div className="content"><textarea value={this.props.pgInfoHtmlTemp} onChange={this.onPageChange}/></div>
+                return <div className="content">
+                    <AceEditor
+                        defaultValue={this.props.pgInfoHtmlTemp}
+                        mode="html"
+                        theme="kuroir"
+                        onChange={this.onPageChange}
+                        name="textarea"
+                        editorProps={{ $blockScrolling: true }}
+                    />
+                </div>
             default:
                 return <div>Error Status</div>
         }

@@ -35,28 +35,22 @@ export function updatePageData() {
     })
         .then((response) => response.json())
         .then((response) => {
-            console.log("response", response);
-
             switch (response.Result) {
                 case "OK":
-                    console.log("result=OK");
                     dispatch(setPgInfoData(response.html));
                     dispatch(setPgInfoStatus(PGINFO.STATUS.SUCCESS));
                     break;
                 case "Error":
-                    console.log("Error", response.Error);
                     dispatch(setPgInfoData("ERROR" + response.Error));
                     dispatch(setPgInfoStatus(PGINFO.STATUS.ERROR));
                     break;
                 default:
-                    console.log("Unknown error");
                     dispatch(setPgInfoData("ERROR Unknown error"));
                     dispatch(setPgInfoStatus(PGINFO.STATUS.ERROR));
             }
             return response;
         })
-        .catch((e) => {
-            console.log("ERROR: " + e);
+        .catch(() => {
             dispatch(setPgInfoStatus(PGINFO.STATUS.ERROR));
             dispatch(setPgInfoData("ERROR Проблемы соединения"));
         });
