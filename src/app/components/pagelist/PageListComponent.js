@@ -20,6 +20,7 @@ class PageListComponent extends Component {
         return <div className="pagelist-wrapper">
                 <div className="pagelist-item" id="" onClick={this.onClick_Link}>Главная</div>
                 <div className="pagelist-item" id="info" onClick={this.onClick_Link}>Инфо</div>
+                <div className="pagelist-item" id="doings" onClick={this.onClick_Link}>Дела</div>
             </div>
     }
 }

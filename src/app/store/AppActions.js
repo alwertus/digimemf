@@ -1,58 +1,105 @@
-export let LOGIN  = {
-    USER_SET_LOGIN: "LOGIN__USER_SET_LOGIN",
-    USER_SET_PASSWORD: "LOGIN__USER_SET_PASSWORD",
-
-    SET_USERNAME: "LOGIN_SET_USERNAME",
-    SET_USERROLES: "LOGIN_SET_USERROLES",
-
-    SET_ERROR_TEXT: "LOGIN__SET_ERROR_TEXT",
-
-    SET_STATUS: "LOGIN__SET_STATUS",
-    STATUS: {
-        NONAME: "LOGIN__STATUS__NONAME",
-        LOADING: "LOGIN__STATUS__LOADING",
-        SUCCESS: "LOGIN__STATUS__SUCCESS"
-    },
-};
-export let TREE = {
-    SET_DATA: "TREE__SET_DATA",
-    SET_SELECTED_ITEM: "TREE__SET_SELECTED_ITEM",
-    SET_EXPANDED_ITEM: "TREE__SET_EXPANDED_ITEM",
-    SET_STATUS: "TREE__SET_STATUS",
-    ERROR_TEXT: "TREE__ERROR_TEXT",
-    STATUS: {
-        NONAME: "TREE__STATUS__NONAME",
-        LOADING: "TREE__STATUS__LOADING",
-        SUCCESS: "TREE__STATUS__SUCCESS",
-        ERROR: "TREE__STATUS__ERROR"
-    },
-    SET_MODE: "TREE__SET_MODE",
-    MODE: {
-        NORMAL: "TREE__MODE__NORMAL",
-        ADD: "TREE__MODE__ADD",
-        EDIT: "TREE__MODE__EDIT",
-        MOVE: "TREE__MODE__MOVE",
-    },
-    NEW_ITEM_TITLE: "TREE__NEW_ITEM_TITLE",
-    EDIT_RECORD_ID: "TREE__EDIT_RECORD_ID"
-};
-export let DIALOG = {
-    IS_OPEN: "DIALOG__IS_OPEN"
-};
-export let PGINFO = {
-    ID: "PGINFO__ID",
-    DATA: "PGINFO__DATA",
-    DATA_TEMP: "PGINFO__DATA_TEMP",
-    SET_STATUS: "PGINFO__SET_STATUS",
-    STATUS: {
-        NONAME: "PGINFO__STATUS__NONAME",
-        LOADING: "PGINFO__STATUS__LOADING",
-        SUCCESS: "PGINFO__STATUS__SUCCESS",
-        ERROR: "PGINFO__STATUS__ERROR"
-    },
-    SET_MODE: "PGINFO__SET_MODE",
-    MODE: {
-        PAGE: "PGINFO__MODE__PAGE",
-        TEXT: "PGINFO__MODE__TEXT",
+function fillStruct(prefix, obj) {
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            if (typeof obj[key] === "string")
+                obj[key] = prefix + "__" + key;
+            else fillStruct(prefix + "__" + key, obj[key])
+        }
     }
-};
+    return obj;
+}
+
+export let CFG = fillStruct("CFG", {
+    SERVER_ADDRESS: "",
+});
+
+export let LOGIN = fillStruct("LOGIN", {
+    USER_SET_LOGIN: "",
+    USER_SET_PASSWORD: "",
+
+    SET_USERNAME: "",
+    SET_USERROLES: "",
+
+    SET_ERROR_TEXT: "",
+
+    SET_STATUS: "",
+    STATUS: {
+        NONAME: "",
+        LOADING: "",
+        SUCCESS: ""
+    },
+});
+
+export let TREE = fillStruct("TREE", {
+    SET_DATA: "",
+    SET_SELECTED_ITEM: "",
+    SET_EXPANDED_ITEM: "",
+    SET_STATUS: "",
+    ERROR_TEXT: "",
+    STATUS: {
+        NONAME: "",
+        LOADING: "",
+        SUCCESS: "",
+        ERROR: ""
+    },
+    SET_MODE: "",
+    MODE: {
+        NORMAL: "",
+        ADD: "",
+        EDIT: "",
+        MOVE: "",
+    },
+    NEW_ITEM_TITLE: "",
+    EDIT_RECORD_ID: ""
+});
+
+export let DIALOG = fillStruct("DIALOG", {
+    IS_OPEN: ""
+});
+
+export let PGINFO = fillStruct("PGINFO", {
+    ID: "",
+    DATA: "",
+    DATA_TEMP: "",
+    SET_STATUS: "",
+    STATUS: {
+        NONAME: "",
+        LOADING: "",
+        SUCCESS: "",
+        ERROR: ""
+    },
+    SET_MODE: "",
+    MODE: {
+        PAGE: "",
+        TEXT: "",
+    }
+});
+export let DOINGS = fillStruct("DOINGS", {
+    SET_CATEGORY : "",
+    CATEGORY_VAL : {
+        GLOBAL : '',
+        YEAR : '',
+        MONTH : '',
+        DAY : '',
+    },
+    DAY: {
+        SET_CURSOR : "",
+        DATA : {
+            SET_START_DATE : "",
+            SET_ITEMS : "",
+            TASK : ""
+        },
+        SHOW_TASK_DETAILS_DIALOG : "",
+        CURRENT_TASK_ID : "",
+        TASK_STATUS_VAL : {
+            PLAY : "",
+            PAUSE : "",
+            COMPLETED : "",
+        }
+    }
+});
+export let IMG_LISTER = fillStruct("IMG_LISTER", {
+    IMAGES : "",
+    CURSOR : "",
+    SHOW : "",
+});

@@ -1,0 +1,21 @@
+.oneday {
+  flex: 1;
+  flex-direction: column;
+  .date {
+    flex-direction: column;
+  }
+  .task-list {
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    .task-list-completed {
+      flex-direction: column;
+    }
+    .task-list-notcompleted {
+      flex-direction: column;
+    }
+  }
+  .holiday {
+    background-color:  #8fefcb;
+  }
+}

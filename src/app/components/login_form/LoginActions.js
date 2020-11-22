@@ -28,7 +28,7 @@ export function signIn(dispatch, userLogin, userPassw) {
     headers.append("Content-Type", "application/json;charset=utf-8");
     headers.append("Authorization", 'Basic ' + Buffer.from(userLogin + ":" + userPassw).toString('base64'));
 
-    fetch("/signin", {
+    fetch("https://127.0.0.1:5188/signin", {
         method: "POST",
         headers: headers,
         body: JSON.stringify({
@@ -54,6 +54,5 @@ export function signIn(dispatch, userLogin, userPassw) {
             console.log("ERROR: " + e);
             dispatch(setErrorText("Проблемы соединения"));
             dispatch(setLoginStatus(LOGIN.STATUS.NONAME));
-
         });
 }

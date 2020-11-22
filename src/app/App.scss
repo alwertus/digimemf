@@ -4,11 +4,15 @@
 }
 
 .header {
-  display: flex;
   justify-content: space-between;
   background-color: rgba(62, 140, 42, 0.74);
   padding: 6px;
 }
+
+.root-container {
+  flex-direction: column;
+}
+
 .page-container {
   flex: 1;
 }
