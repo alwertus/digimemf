@@ -23,9 +23,11 @@ export function updatePageData() {
         return;
     }
 
+    let serverAddr = store.getState().paramServerAddress;
+
     dispatch(setPgInfoStatus(PGINFO.STATUS.LOADING));
 
-    fetch("/infopage", {
+    fetch(serverAddr + "/infopage", {
         method: "POST",
         headers: getAuthHeader(),
         body: JSON.stringify({
