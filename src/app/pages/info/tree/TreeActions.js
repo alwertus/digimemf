@@ -30,9 +30,11 @@ export function updateTreeData() {
         return;
     }
 
+    let serverAddr = store.getState().paramServerAddress;
+
     dispatch(setTreeDataStatus(TREE.STATUS.LOADING));
 
-    fetch("/infopages", {
+    fetch(serverAddr + "/infopages", {
         method: "POST",
         headers: getAuthHeader(),
         body: JSON.stringify({

@@ -14,7 +14,7 @@ export const TmplComp = props => {
         </ul>
 
         <button onClick={()=>setCount(count + 1)}>Add +1</button>
-        <button onClick={()=> dispatch({ type: CFG.SERVER_ADDRESS, newValue: "azaza" })}>set new server</button>
+        <button onClick={()=> dispatch({ type: CFG.SERVER_ADDRESS, newValue: "http://192.168.1.8:5188" })}>set new server</button>
         <p>{server}</p>
 
     </div>
